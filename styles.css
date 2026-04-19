@@ -1,21 +1,16 @@
 /* ==================================================
-   Мы любим Московский транспорт — Social Media Card
-   Цель: чистая визитка с баннером и ссылками
+   TEM2 — Release Card (Oceanic Minimalism)
+   Цель: чистая информация по релизу
    Поддержка: WCAG AA, адаптивность, доступность
    ================================================== */
 
 :root {
-  /* Цвета — нейтральные, подходящие для транспорта и общественных тем */
-  --bg-dark: #0d1b2a;        /* тёмно-синий фон */
-  --card-bg: rgba(18, 30, 45, 0.85); /* карточка */
-  --text-light: #f0f4f8;     /* основной текст */
-  --text-muted: #a0b0c0;     /* подсказки */
-  --border-light: rgba(240, 244, 248, 0.15);
-  --border-strong: rgba(240, 244, 248, 0.3);
-
-  /* Цвета соцсетей */
-  --vk-blue: #5181b8;
-  --dzen-yellow: #ffcc00;
+  /* Морская палитра */
+  --ocean-dark: #0a141d;      /* фон */
+  --ocean-mid: #0c1a25;       /* кард */
+  --foam-light: #f0f6fb;      /* основной текст */
+  --wave-gray: #c0d0e0;       /* метаданные */
+  --border-strong: rgba(240, 246, 251, 0.25);
 
   --font-main: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
 }
@@ -27,101 +22,147 @@
 }
 
 body {
-  background: var(--bg-dark);
-  color: var(--text-light);
+  background: var(--ocean-dark);
+  color: var(--foam-light);
   font-family: var(--font-main);
   min-height: 100vh;
   padding: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
+  /* Лёгкая текстура воды */
+  background-image:
+    radial-gradient(circle at 15% 25%, rgba(240, 246, 251, 0.02) 0%, transparent 30%),
+    radial-gradient(circle at 85% 75%, rgba(240, 246, 251, 0.015) 0%, transparent 35%);
 }
 
-.socialmedia-card {
-  max-width: 500px;
+.release-card {
+  max-width: 460px;
   width: 100%;
-  background: var(--card-bg);
+  background: rgba(12, 26, 37, 0.85);
   backdrop-filter: blur(10px);
   border-radius: 16px;
-  padding: 32px 24px;
+  padding: 30px 24px;
   text-align: center;
   box-shadow:
     0 0 24px rgba(0, 30, 50, 0.6),
     inset 0 0 14px rgba(0, 0, 0, 0.7);
   border: 1px solid var(--border-strong);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 28px; /* равномерный отступ между элементами */
+  position: relative; /* Обязательно для ::after */
 }
 
-/* === БАННЕР ПРОЕКТА — под скриншот === */
-.banner-logo {
+.release-card::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 24px;
+  background: linear-gradient(to bottom, transparent, var(--ocean-dark));
+  pointer-events: none; /* Не мешает кликам */
+}
+
+.cover {
   width: 100%;
-  max-width: 560px; /* ширина, близкая к реальному баннеру */
-  height: auto;
-  border-radius: 10px;
-  box-shadow:
-    0 0 24px rgba(229, 0, 18, 0.4),   /* красная неоновая тень — как на обводке */
-    0 8px 30px rgba(0, 0, 0, 0.3);   /* глубина */
-  display: block;
-  margin: 0 auto 28px; /* отступ снизу — чтобы не сливался со ссылками */
-  background: rgba(255, 255, 255, 0.03); /* лёгкий фон для контраста на тёмном body */
-  /* Опционально: если фон баннера слишком светлый — добавим slight blur-эффект */
-  filter: brightness(1.02);
+  max-width: 400px;
+  border-radius: 12px;
+  margin: 0 auto 22px;
+  box-shadow: 0 0 22px rgba(0, 30, 50, 0.5);
+  /* Добавляем переход */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.social-links {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  width: 100%;
-  max-width: 300px;
+/* При наведении — только на устройствах с мышью/тачпадом */
+.cover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 28px rgba(0, 30, 50, 0.7);
 }
 
-.social-link {
-  display: block;
-  padding: 14px 20px;
-  border-radius: 10px;
-  font-family: var(--font-main);
-  font-size: 1rem;
+.track-title {
+  font-size: 2.7rem;
+  font-weight: 900;
+  letter-spacing: 2.1px;
+  text-transform: uppercase;
+  margin: 0 0 10px;
+  color: var(--foam-light);
+  -webkit-text-stroke: 1.4px rgba(10, 20, 29, 0.85);
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.75);
+}
+
+.track-meta {
+  font-size: 0.98rem;
+  opacity: 0.88;
+  color: var(--wave-gray);
+  margin: 0 0 24px;
+  line-height: 1.55;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.meta-highlight {
+  color: var(--foam-light);
   font-weight: 500;
-  text-decoration: none;
-  text-align: center;
-  transition: all 0.2s ease;
-  border: 1px solid var(--border-light);
-  color: var(--text-light);
+  position: relative;
+  transition: color 0.2s ease;
 }
 
-.vk-link {
-  background: rgba(81, 129, 184, 0.15);
-}
-.vk-link:hover {
-  background: rgba(81, 129, 184, 0.25);
-  border-color: var(--vk-blue);
-  transform: translateY(-2px);
+.meta-highlight::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: rgba(240, 246, 251, 0.3);
+  opacity: 0;
+  transition: opacity 0.2s ease;
 }
 
-.dzen-link {
-  background: rgba(255, 204, 0, 0.15);
-  color: #000; /* Текст на жёлтом фоне — делаем его тёмным */
+.meta-highlight:hover {
+  color: var(--foam-light);
 }
-.dzen-link:hover {
-  background: rgba(255, 204, 0, 0.25);
-  border-color: var(--dzen-yellow);
-  transform: translateY(-2px);
+
+.meta-highlight:hover::after {
+  opacity: 1;
+}
+
+/* === Аудиоплеер — стиль при фокусе внутри (для доступности) === */
+.audio-player {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto 24px; /* Увеличим нижний отступ, чтобы было место для индикации */
+  background: rgba(8, 18, 28, 0.92);
+  border-radius: 14px;
+  padding: 16px;
+  box-shadow:
+    0 0 16px rgba(0, 30, 50, 0.5),
+    inset 0 0 12px rgba(0, 0, 0, 0.8);
+  border: 1px solid var(--border-strong);
+  transition: box-shadow 0.3s ease, border-color 0.3s ease; /* Добавим плавность */
+}
+
+/* === Индикатор активного плеера (при фокусе на controls) === */
+.audio-player:focus-within {
+  box-shadow:
+    0 0 16px rgba(0, 243, 255, 0.4), /* Неоновый акцент */
+    inset 0 0 12px rgba(0, 0, 0, 0.8);
+  border-color: rgba(0, 243, 255, 0.5); /* Более яркая обводка */
 }
 
 /* Адаптивность */
 @media (max-width: 600px) {
-  .socialmedia-card {
-    padding: 24px 16px;
+  .release-card {
+    padding: 26px 18px;
   }
-  .banner-logo {
-    max-width: 480px;
-    margin-bottom: 24px;
+  .track-title {
+    font-size: 2.1rem;
+    letter-spacing: 1.8px;
   }
-  .social-links {
-    max-width: 100%;
+  .track-meta {
+    font-size: 0.92rem;
+  }
+  .cover {
+    margin-bottom: 18px;
   }
 }
