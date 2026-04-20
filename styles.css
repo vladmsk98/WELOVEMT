@@ -100,6 +100,25 @@ body {
   text-overflow: ellipsis;
 }
 
+.track-separator {
+  height: 1px;
+  background: var(--border-strong);
+  margin: 32px 0;
+  position: relative;
+}
+
+.track-separator::before {
+  content: "• • •";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--ocean-dark);
+  padding: 0 12px;
+  color: var(--wave-gray);
+  font-size: 0.8rem;
+}
+
 .meta-highlight {
   color: var(--foam-light);
   font-weight: 500;
