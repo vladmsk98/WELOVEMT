@@ -57,4 +57,41 @@ document.addEventListener("DOMContentLoaded", () => {
   // Настройка для обоих треков
   setupSharingForTrack('track1');
   setupSharingForTrack('track2');
+
+  // === Система оценки треков ===
+  document.querySelectorAll('.rating-section').forEach(section => {
+  const stars = section.querySelectorAll('.star');
+  const trackId = section.getAttribute('data-track');
+  const ratingDisplay = section.querySelector('.rating-display span');
+
+  // Загружаем сохранённую оценку
+  const savedRating = localStorage.getItem(`rating-track${trackId}`);
+  if (savedRating) {
+    updateStars(parseInt(savedRating));
+    ratingDisplay.textContent = savedRating;
+  }
+
+  stars.forEach(star => {
+    star.addEventListener('click', () => {
+      const value = parseInt(star.getAttribute('data-value'));
+
+      // Сохраняем оценку
+      localStorage.setItem(`rating-track${trackId}`, value);
+
+      // Обновляем отображение
+      updateStars(value);
+      ratingDisplay.textContent = value;
+    });
+  });
+
+  function updateStars(rating) {
+    stars.forEach((star, index) => {
+      if (index < rating) {
+        star.classList.add('active');
+      } else {
+        star.classList.remove('active');
+      }
+    });
+  }
+});
 });
