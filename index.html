@@ -23,6 +23,17 @@
       <source src="audio/СПЛЕТЕНИЯ.flac" type="audio/flac">
       Ваш браузер не поддерживает аудио.
     </audio>
+    <div class="rating-section" data-track="1">
+      <p>Как вам трек?</p>
+      <div class="stars">
+        <span class="star" data-value="1">★</span>
+        <span class="star" data-value="2">★</span>
+        <span class="star" data-value="3">★</span>
+        <span class="star" data-value="4">★</span>
+        <span class="star" data-value="5">★</span>
+      </div>
+      <div class="rating-display">Оценка: <span id="rating-value-track1">0</span>/5</div>
+    </div>
     <details class="lyrics-section">
       <summary>📄 Показать текст</summary>
       <div class="lyrics-content">
@@ -177,6 +188,17 @@
       <source src="audio/ТОЛЬКОБИТ.flac" type="audio/flac">
       Ваш браузер не поддерживает аудио.
     </audio>
+    <div class="rating-section" data-track="2">
+      <p>Как вам трек?</p>
+      <div class="stars">
+        <span class="star" data-value="1">★</span>
+        <span class="star" data-value="2">★</span>
+        <span class="star" data-value="3">★</span>
+        <span class="star" data-value="4">★</span>
+        <span class="star" data-value="5">★</span>
+      </div>
+      <div class="rating-display">Оценка: <span id="rating-value-track1">0</span>/5</div>
+    </div>
     <details class="download-options">
       <summary>💾 Скачать</summary>
       <ul class="format-list">
@@ -212,42 +234,47 @@
           </div>
         </div>
       </div>
-      <table class="style-comparison">
-        <thead>
-          <tr>
-            <th>Критерий</th>
-            <th>СПЛЕТЕНИЯ (Нейросети)</th>
-            <th>ТОЛЬКОБИТ (Без нейросетей)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Жанр</td>
-            <td>Dark Indie Rock</td>
-            <td>Dark Indie Rock</td>
-          </tr>
-          <tr>
-            <td>Вокал</td>
-            <td>Нейросетевой</td>
-            <td>Отсутствует (инструментал)</td>
-          </tr>
-          <tr>
-            <td>Структура</td>
-            <td>Циклы, петли</td>
-            <td>Чёткая структура</td>
-          </tr>
-          <tr>
-            <td>Атмосфера</td>
-            <td>Вязкая, тягучая</td>
-            <td>Ритмичная, плотная</td>
-          </tr>
-          <tr>
-            <td>Создание</td>
-            <td>Нейросети (частично)</td>
-            <td>Человек</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="comparison-list">
+        <div class="comparison-item">
+          <h4>Жанр</h4>
+          <div class="comparison-values">
+            <div class="value ai"><strong>СПЛЕТЕНИЯ</strong>: Dark Indie Rock</div>
+            <div class="value human"><strong>ТОЛЬКОБИТ</strong>: Dark Indie Rock</div>
+          </div>
+        </div>
+      
+        <div class="comparison-item">
+          <h4>Вокал</h4>
+          <div class="comparison-values">
+            <div class="value ai"><strong>СПЛЕТЕНИЯ</strong>: Нейросетевой</div>
+            <div class="value human"><strong>ТОЛЬКОБИТ</strong>: Инструментальный</div>
+          </div>
+        </div>
+        
+        <div class="comparison-item">
+          <h4>Структура</h4>
+          <div class="comparison-values">
+            <div class="value ai"><strong>СПЛЕТЕНИЯ</strong>: Циклы, петли</div>
+            <div class="value human"><strong>ТОЛЬКОБИТ</strong>: Чёткая структура</div>
+          </div>
+        </div>
+        
+        <div class="comparison-item">
+          <h4>Атмосфера</h4>
+          <div class="comparison-values">
+            <div class="value ai"><strong>СПЛЕТЕНИЯ</strong>: Вязкая, тягучая</div>
+            <div class="value human"><strong>ТОЛЬКОБИТ</strong>: Ритмичная, плотная</div>
+          </div>
+        </div>
+        
+        <div class="comparison-item">
+          <h4>Создание</h4>
+          <div class="comparison-values">
+            <div class="value ai"><strong>СПЛЕТЕНИЯ</strong>: Нейросеть</div>
+            <div class="value human"><strong>ТОЛЬКОБИТ</strong>: Человек</div>
+          </div>
+        </div>
+      </div>
     </details>
   </div>
   <script src="script.js"></script>
