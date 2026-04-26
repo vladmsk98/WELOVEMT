@@ -11,6 +11,9 @@
     <!-- === ТРЕК 1: СПЛЕТЕНИЯ === -->
     <div class="track-item ai-track"></div>
     <img src="covers/DLTMZK.jpg" alt="DLTMZK COVER" class="cover">
+    <p class="quick-nav">
+      <a href="#comparison" class="section-link"><span>Сравнение ИИ vs. человек</span></a>
+    </p>
     <h1 class="track-title">СПЛЕТЕНИЯ</h1>
     <span class="ai-badge">🤖 Сделано с помощью нейросетей</span>
     <p class="track-meta">
@@ -33,6 +36,11 @@
         <span class="star" data-value="5">★</span>
       </div>
       <div class="rating-display">Оценка: <span id="rating-value-track1">0</span>/5</div>
+    </div>
+    <div class="ab-test-prompt" data-track="1">
+      <p>Какой трек вам ближе?</p>
+      <button class="ab-choice" data-choice="ai">СПЛЕТЕНИЯ (ИИ)</button>
+      <button class="ab-choice" data-choice="human">ТОЛЬКОБИТ (Человек)</button>
     </div>
     <details class="lyrics-section">
       <summary>📄 Показать текст</summary>
@@ -169,7 +177,6 @@
       <button id="copy-url-btn-track1" class="share-btn copy-btn">🔗 Копировать ссылку</button>
       <a href="#" id="vk-share-btn-track1" class="share-btn vk-btn" target="_blank" rel="noopener noreferrer">Поделиться в ВК</a>
       <a href="#" id="ok-share-btn-track1" class="share-btn ok-btn" target="_blank" rel="noopener noreferrer">Поделиться в ОК</a>
-      <a href="#" id="bsky-share-btn-track1" class="share-btn bsky-btn" target="_blank" rel="noopener noreferrer">Поделиться в BlueSky</a>
     </div>
 
     <div class="track-separator"></div>
@@ -199,6 +206,11 @@
       </div>
       <div class="rating-display">Оценка: <span id="rating-value-track1">0</span>/5</div>
     </div>
+    <div class="ab-test-prompt" data-track="1">
+      <p>Какой трек вам ближе?</p>
+      <button class="ab-choice" data-choice="ai">СПЛЕТЕНИЯ (ИИ)</button>
+      <button class="ab-choice" data-choice="human">ТОЛЬКОБИТ (Человек)</button>
+    </div>
     <details class="download-options">
       <summary>💾 Скачать</summary>
       <ul class="format-list">
@@ -209,8 +221,8 @@
       <button id="copy-url-btn-track2" class="share-btn copy-btn">🔗 Копировать ссылку</button>
       <a href="#" id="vk-share-btn-track2" class="share-btn vk-btn" target="_blank" rel="noopener noreferrer">Поделиться в ВК</a>
       <a href="#" id="ok-share-btn-track2" class="share-btn ok-btn" target="_blank" rel="noopener noreferrer">Поделиться в ОК</a>
-      <a href="#" id="bsky-share-btn-track2" class="share-btn bsky-btn" target="_blank" rel="noopener noreferrer">Поделиться в BlueSky</a>
     </div>
+    <a id="comparison"></a>
     <details class="style-comparison-section">
       <summary>🔍 Сравнение: ИИ vs. человек</summary>
       <div class="comparison-bars-section">
@@ -277,6 +289,7 @@
       </div>
     </details>
   </div>
+  <a href="#" id="back-to-top" class="back-to-top-btn">↑</a>
   <script src="script.js"></script>
 </body>
 </html>
